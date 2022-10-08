@@ -191,15 +191,15 @@
         sys {
         bindings = <
                             &kp ESC        &kp LC(LS(TAB))     &kp RC(TAB)              &td LG(V) LG(C)     &kp UP          &td Q BKSP
-        &td LG(GRAVE) TAB   &kp DEL        &td HOME LG(LBKT)   &td END LG(RBKT)         &td TAB LEFT        &kp DOWN        &td RIGHT   &kp RET
+        &td LG(GRAVE) TAB   &kp DEL        &td HOME LG(LBKT)   &td END LG(RBKT)         &td TAB LEFT        &kp DOWN        &kp RIGHT   &kp RET
                                            &sr LSHIFT AL1      &kp LALT                 &none               &kp RGUI
         >;
         };
 
         bt {
         bindings = <
-                  &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2           &trans      &trans  &trans
-        &trans    &reset          &trans        &trans                 &trans      &trans  &reset  &bt BT_CLR
+                  &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2           &bt BT_SEL 3     &bt BT_SEL 4   &trans
+        &trans    &reset          &trans        &trans                 &trans           &trans         &reset  &bt BT_CLR
                                   &to AL1       &none                  &none     &none
         >;
         };
