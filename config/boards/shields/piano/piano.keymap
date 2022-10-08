@@ -24,48 +24,48 @@
 #define AL1 0
 #define AL2 1
 #define SM1 2
-#define SM2 3	
-#define NM1 4	
+#define SM2 3
+#define NM1 4
 #define SYS 5
-#define BT 6	
+#define BT 6
 #define AL2U 7
 / { 
     combos {
         compatible = "zmk,combos";
         combo_sys {
             timeout-ms = <30>;
-	    key-positions = <3 4 5>;
+        key-positions = <3 4 5>;
             bindings = <&to SYS>;
         };
         combo_caps {
             timeout-ms = <30>;
-	    key-positions = <10 11 12>;
+        key-positions = <10 11 12>;
             bindings = <&caps_word>;
         };
         combo_bt  {
             timeout-ms = <10>;
             key-positions = <11 12>;
             bindings = <&to BT>;
-	    layers = <SM1>; 
+        layers = <SM1>;
         };
         lalt {
             timeout-ms = <20>;
-	    key-positions = <8 9>;
+        key-positions = <8 9>;
             bindings = <&kp LALT>; 
-	    layers = <SYS>; 
+        layers = <SYS>;
         };
-        lclk {
-            timeout-ms = <20>;
-	    key-positions = <10 11>;
-            bindings = <&mkp LCLK>;
-	    layers = <SYS>;
-        };
-        rclk {
-            timeout-ms = <20>;
-	    key-positions = <3 4>;
-            bindings = <&mkp RCLK>;
-	    layers = <SYS>;
-        };
+        /* lclk { */
+        /*     timeout-ms = <20>; */
+        /* key-positions = <10 11>; */
+        /*     bindings = <&mkp LCLK>; */
+        /* layers = <SYS>; */
+        /* }; */
+        /* rclk { */
+        /*     timeout-ms = <20>; */
+        /* key-positions = <3 4>; */
+        /*     bindings = <&mkp RCLK>; */
+        /* layers = <SYS>; */
+        /* }; */
 
 
     };
@@ -79,7 +79,7 @@
             quick-tap-ms = <250>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
-	    hold-trigger-key-positions = <3 4 5 10 11 12 13 14>; // right hand
+        hold-trigger-key-positions = <3 4 5 10 11 12 13 14>; // right hand
         };
         hm_r: homerow_mods_right {
             compatible = "zmk,behavior-hold-tap";
@@ -89,7 +89,7 @@
             quick-tap-ms = <250>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
-	    hold-trigger-key-positions = <0 1 2 6 7 8 9>; // left hand
+        hold-trigger-key-positions = <0 1 2 6 7 8 9>; // left hand
         };
         sr: shift_layer {
             compatible = "zmk,behavior-hold-tap";
@@ -99,7 +99,7 @@
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&to>;
-	    retro-tap;
+        retro-tap;
         };
         hl_l: homerow_layers_left {
             compatible = "zmk,behavior-hold-tap";
@@ -109,7 +109,7 @@
             quick-tap-ms = <250>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
-	    hold-trigger-key-positions = <3 4 5 10 11 12 13 14>; // right hand
+        hold-trigger-key-positions = <3 4 5 10 11 12 13 14>; // right hand
         };
         hl_r: homerow_layers_right {
             compatible = "zmk,behavior-hold-tap";
@@ -119,9 +119,9 @@
             quick-tap-ms = <250>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
-	    hold-trigger-key-positions = <0 1 2 6 7 8 9>; // left hand
+        hold-trigger-key-positions = <0 1 2 6 7 8 9>; // left hand
         };
-	td: tapdance {
+    td: tapdance {
             compatible = "zmk,behavior-hold-tap";
             label = "TAPDANCE";
             #binding-cells = <2>;
@@ -130,87 +130,87 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-	alpha2macro: behavior_macro_1 {
-		compatible = "zmk,behavior-macro";
-		label = "MACRO1";
-		#binding-cells = <0>;
-		bindings = < &sl AL2 >;
-	};
-	caps_alpha2macro: behavior_macro_2 {
-		compatible = "zmk,behavior-macro";
-		label = "MACRO2";
-		#binding-cells = <0>;
-		bindings = < &sl AL2U >;
-	};
+    alpha2macro: behavior_macro_1 {
+        compatible = "zmk,behavior-macro";
+        label = "MACRO1";
+        #binding-cells = <0>;
+        bindings = < &sl AL2 >;
     };
-// 				0		1		2					3		4			5
-// 		6		7		8		9 					10		11			12 		13
-//							14	    15 	            16 	17
+    caps_alpha2macro: behavior_macro_2 {
+        compatible = "zmk,behavior-macro";
+        label = "MACRO2";
+        #binding-cells = <0>;
+        bindings = < &sl AL2U >;
+    };
+    };
+//                  0       1       2                   3       4           5
+//          6       7       8       9                   10      11          12          13
+//                          14      15                  16      17
        keymap {
                 compatible = "zmk,keymap";
                 
-       		alpha1 {
-		bindings = <
-		 		&hm_l LCTL L 	&hm_l LALT G 	&hm_l LGUI D		&hm_r RGUI H 	&hm_r RALT U    	&hm_r RCTL O	  
-		&hl_l NM1 I	&hl_l SM2 S	&hl_l SM1 R	&hl_l SYS T 	 	&hl_r SYS N    	&hl_r SM1 E   		&hl_r SM2 A 	&hl_r NM1 C
-			 	 		 		&mt LC(LS(LALT)) SPC &key_repeat  &caps_alpha2macro	&alpha2macro	 	
-		>;
-		};
-       		alpha2 {
-		bindings = <
-		 	 	&kp V 		&kp W		&kp M	 	 	&kp F    	&kp SQT			&kp Z 		
-		&kp Q	 	&kp J 		&kp P		&kp K 			&kp B 		&kp DOT			&kp X		&kp Y 
-			 	 		 		&sk LSHIFT 		&none &none &sl AL2U	
-		>;
-		};
-		
-       		sym1 {
-		bindings = <
-		 		&kp LA(N3)   	&kp LS(N3)	&kp DLLR	    	&kp LS(COMMA)	&kp LS(DOT)		&kp CARET	
-		&kp GRAVE	&kp TILDE 	&kp MINUS      	&kp BSLH	 	&kp LBKT	&kp RBKT	 	&kp PIPE 	&kp SLASH
-				  				&trans  		&trans		&trans  	&trans
-		>;
-		};
-		sym2 {
-		bindings = <
-				&kp ATSN	&td LA(RBKT) LA(LS(RBKT))	&td  LA(LBKT) LA(LS(LBKT))	&kp LPRN	&kp RPRN 	&kp SEMI 	
-		&kp STAR  	&kp PRCNT	&td QMARK EXCL       		&kp DQT   			&kp LBRC  	&kp RBRC	&kp AMPS	&kp COLON 
-		 		&trans 		&trans  			&trans 	&none &none &trans 		
+                alpha1 {
+        bindings = <
+                            &hm_l LCTL L    &hm_l LALT G    &hm_l LGUI D                &hm_r RGUI H    &hm_r RALT U        &hm_r RCTL O
+            &hl_l NM1 I     &hl_l SM2 S     &hl_l SM1 R     &hl_l SYS T                 &hl_r SYS N     &hl_r SM1 E         &hl_r SM2 A     &hl_r NM1 C
+                                              &mt LC(LS(LALT)) SPC &key_repeat          &caps_alpha2macro     &alpha2macro
+        >;
+        };
+                alpha2 {
+        bindings = <
+                    &kp V       &kp W       &kp M           &kp F       &kp SQT             &kp Z
+        &kp Q       &kp J       &kp P       &kp K           &kp B       &kp DOT             &kp X       &kp Y
+                                &sk LSHIFT  &none           &none       &sl AL2U
+        >;
+        };
 
-		>;
-		};
+                sym1 {
+        bindings = <
+                    &kp LA(N3)  &kp LS(N3)  &kp DLLR        &kp LS(COMMA)   &kp LS(DOT)     &kp CARET
+        &kp GRAVE   &kp TILDE   &kp MINUS   &kp BSLH        &kp LBKT        &kp RBKT        &kp PIPE    &kp SLASH
+                                &trans          &trans      &trans      &trans
+        >;
+        };
+        sym2 {
+        bindings = <
+                &kp ATSN    &td LA(RBKT) LA(LS(RBKT))   &td  LA(LBKT) LA(LS(LBKT))  &kp LPRN    &kp RPRN    &kp SEMI
+        &kp STAR    &kp PRCNT   &td QMARK EXCL              &kp DQT             &kp LBRC    &kp RBRC    &kp AMPS    &kp COLON
+                &trans          &trans              &trans      &none &none &trans
 
-		num {
-		bindings = <
-				&hm_l LCTL DOT 	&hm_l LALT N0	&hm_l LGUI N1 		&hm_r RGUI N2 	&hm_r RALT N3		&hm_r RCTL N4	
-		&kp MINUS	&kp PLUS 	&kp N5		&kp N6			&kp N7		&kp N8			&kp N9   	&kp EQUAL
-							&sr LSHIFT AL1 		&trans 		&trans 			&trans  	 
-		>;
-		};
+        >;
+        };
 
-		sys {
-		bindings = <
-				 	&kp ESC			&kp LC(LS(TAB)) 	&kp RC(TAB)		&td LG(V) LG(C) 	&kp UP 		&td Q BKSP 			
-		&td LG(GRAVE) TAB	&td HOME DEL		&td END LG(LBKT) 	&kp LG(RBKT)		&td TAB LEFT  		&kp DOWN 	&td  LC(LG(LS(N4))) RIGHT 	&kp RET 
-		 			 		 				&sr LSHIFT AL1 		&none &none &kp RGUI		
-		>;
-		};
+        num {
+        bindings = <
+                &hm_l LCTL DOT      &hm_l LALT N0   &hm_l LGUI N1       &hm_r RGUI N2   &hm_r RALT N3       &hm_r RCTL N4
+        &kp MINUS   &kp PLUS    &kp N5      &kp N6          &kp N7      &kp N8          &kp N9      &kp EQUAL
+                            &sr LSHIFT AL1          &trans          &trans              &trans
+        >;
+        };
 
-		bt {
-		bindings = <
-				&bt BT_PRV	&bt BT_NXT	&trans 			&trans 	&trans	&trans	
-		&bootloader  	&trans 		&trans 		&trans 			&trans 	&trans 	&trans	&bt BT_CLR
-		 	 	 				&to AL1	&none &none	&none
-		>;
-		};
+        sys {
+        bindings = <
+                    &kp ESC             &kp LC(LS(TAB))     &kp RC(TAB)         &td LG(V) LG(C)     &kp UP          &td Q BKSP
+        &td LG(GRAVE) TAB   &td HOME DEL        &td END LG(LBKT)    &kp LG(RBKT)        &td TAB LEFT        &kp DOWN    &td  LC(LG(LS(N4))) RIGHT   &kp RET
+                                            &sr LSHIFT AL1          &none &none &kp RGUI
+        >;
+        };
 
-       		alpha2cap {
-		bindings = <
-		 	 	&kp LS(V)	&kp LS(W)	&kp LS(M) 	 	&kp LS(F)    	&trans		&kp LS(Z)	
-		&kp LS(Q) 	&kp LS(J) 	&kp LS(P)	&kp LS(K)		&kp LS(B)	&kp COMMA	&kp LS(X)	&kp LS(Y) 
-			 	&trans 		&trans 			&trans	&none
-		>;
-		};
+        bt {
+        bindings = <
+                &bt BT_PRV  &bt BT_NXT  &trans              &trans      &trans  &trans
+        &bootloader     &trans          &trans          &trans              &trans      &trans      &trans  &bt BT_CLR
+                                &to AL1     &none &none     &none
+        >;
+        };
+
+                alpha2cap {
+        bindings = <
+                &kp LS(V)   &kp LS(W)   &kp LS(M)       &kp LS(F)       &trans      &kp LS(Z)
+        &kp LS(Q)   &kp LS(J)   &kp LS(P)   &kp LS(K)       &kp LS(B)   &kp COMMA   &kp LS(X)   &kp LS(Y)
+                &trans          &trans              &trans  &none
+        >;
+        };
         
-	};
+    };
 };
