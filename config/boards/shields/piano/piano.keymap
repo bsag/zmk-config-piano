@@ -190,17 +190,17 @@
 
         sys {
         bindings = <
-                    &kp ESC             &kp LC(LS(TAB))     &kp RC(TAB)         &td LG(V) LG(C)     &kp UP          &td Q BKSP
-        &td LG(GRAVE) TAB   &td HOME DEL        &td END LG(LBKT)    &kp LG(RBKT)        &td TAB LEFT        &kp DOWN    &td  LC(LG(LS(N4))) RIGHT   &kp RET
-                                            &sr LSHIFT AL1          &none &none &kp RGUI
+                            &kp ESC        &kp LC(LS(TAB))     &kp RC(TAB)              &td LG(V) LG(C)     &kp UP          &td Q BKSP
+        &td LG(GRAVE) TAB   &kp DEL        &td HOME LG(LBKT)   &td END LG(RBKT)         &td TAB LEFT        &kp DOWN        &td RIGHT   &kp RET
+                                           &sr LSHIFT AL1      &kp LALT                 &none               &kp RGUI
         >;
         };
 
         bt {
         bindings = <
-                &bt BT_PRV  &bt BT_NXT  &trans              &trans      &trans  &trans
-        &bootloader     &trans          &trans          &trans              &trans      &trans      &trans  &bt BT_CLR
-                                &to AL1     &none &none     &none
+                  &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2           &trans      &trans  &trans
+        &trans    &reset          &trans        &trans                 &trans      &trans  &reset  &bt BT_CLR
+                                  &to AL1       &none                  &none     &none
         >;
         };
 
