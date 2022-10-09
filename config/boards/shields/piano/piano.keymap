@@ -28,7 +28,8 @@
 #define NM1 4
 #define SYS 5
 #define BT 6
-#define AL2U 7
+#define FUN 7
+#define AL2U 8
 / { 
     combos {
         compatible = "zmk,combos";
@@ -47,6 +48,12 @@
             key-positions = <11 12>;
             bindings = <&to BT>;
         layers = <SM1>;
+        };
+        combo_fun  {
+            timeout-ms = <10>;
+            key-positions = <7 8>;
+            bindings = <&to FUN>;
+        layers = <AL1>;
         };
         lalt {
             timeout-ms = <20>;
@@ -189,12 +196,18 @@
                                   &to AL1       &none                  &none     &none
         >;
         };
-
+        fun {
+            bindings = <
+                     &kp F11   &kp F10   &kp F1           &kp F2   &kp F3   &kp F4
+     &kp C_VOL_DN    &kp F12   &kp F5    &kp F6           &kp F7   &kp F8   &kp F9  &kp C_VOL_UP
+                               &to AL1   &none            &kp K_MUTE    &none
+                >;
+        };
                 alpha2cap {
         bindings = <
                     &kp LS(V)   &kp LS(W)   &kp LS(M)           &kp LS(F)   &kp DQT      &kp LS(Z)
         &kp LS(Q)   &kp LS(J)   &kp LS(P)   &kp LS(K)           &kp LS(B)   &kp COMMA    &kp LS(X)   &kp LS(Y)
-                                    &trans    &trans            &trans  &none
+                                &to AL1    &trans            &trans  &none
         >;
         };
         
