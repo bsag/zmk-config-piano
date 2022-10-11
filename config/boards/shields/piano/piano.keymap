@@ -183,9 +183,9 @@
 
         sys {
         bindings = <
-                            &kp ESC        &kp LG(LS(LBKT))    &kp LG(LS(RBKT))         &td LG(V) LG(C)     &kp UP          &td Q BKSP
-        &td LG(GRAVE) TAB   &kp DEL        &td HOME LG(LBKT)   &td END LG(RBKT)         &td TAB LEFT        &kp DOWN        &kp RIGHT   &kp RET
-                                           &sr LSHIFT AL1      &kp LALT                 &none               &kp RGUI
+                            &kp ESC        &kp LG(LS(LBKT))    &kp LG(LS(RBKT))         &td LG(V) LG(C)     &kp UP          &kp BKSP
+        &td LG(GRAVE) TAB   &kp DEL        &td HOME LG(LBKT)   &td END LG(RBKT)         &td LG(S) LEFT      &kp DOWN        &kp RIGHT   &kp RET
+                                           &sr LSHIFT AL1      &kp LALT                 &kp LSHIFT          &kp RGUI
         >;
         };
 
@@ -200,7 +200,7 @@
             bindings = <
                      &kp F11   &kp F10   &kp F1           &kp F2   &kp F3   &kp F4
      &kp C_VOL_DN    &kp F12   &kp F5    &kp F6           &kp F7   &kp F8   &kp F9  &kp C_VOL_UP
-                               &to AL1   &none            &kp C_MUTE    &none
+                               &to AL1   &none            &none    &kp C_MUTE
                 >;
         };
                 alpha2cap {
