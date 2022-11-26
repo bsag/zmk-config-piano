@@ -135,7 +135,7 @@
             flavor = "hold-preferred";
             tapping-term-ms = <400>;
             quick-tap-ms = <200>;
-            bindings = <&kp>, <&repeat>;
+            bindings = <&kp>, <&key_repeat>;
         };
     alpha2macro: behavior_macro_1 {
         compatible = "zmk,behavior-macro";
