@@ -25,7 +25,7 @@
 #define AL2 1
 #define SM1 2
 #define SM2 3
-#define NM1 4
+#define NUM 4
 #define SYS 5
 #define BT 6
 #define FUN 7
@@ -46,7 +46,7 @@
         combo_num {
             timeout-ms = <30>;
             key-positions = <0 1 2>;
-            bindings = <&to NM1>;
+            bindings = <&to NUM>;
         };
         combo_bt  {
             timeout-ms = <10>;
@@ -150,7 +150,7 @@
                 alpha1 {
         bindings = <
                             &hm_l LCTL L    &hm_l LALT G    &hm_l LGUI D                &hm_r RGUI H    &hm_r LALT U        &hm_r RCTL O
-            &hl_l NM1 I     &hl_l SM2 S     &hl_l SM1 R     &hl_l SYS T                 &hl_r SYS N     &hl_r SM1 E         &hl_r SM2 A     &hl_r NM1 C
+            &hl_l NUM I     &hl_l SM2 S     &hl_l SM1 R     &hl_l SYS T                 &hl_r SYS N     &hl_r SM1 E         &hl_r SM2 A     &hl_r NUM C
                                 &mt LC(LS(LALT)) SPC        &sk LSHIFT                  &caps_alpha2macro     &alpha2macro
         >;
         };
@@ -164,14 +164,14 @@
 
                 sym1 {
         bindings = <
-                    &kp STAR    &kp LS(N3)  &kp DLLR                       &kp LS(COMMA)   &kp LS(DOT)     &kp CARET
-        &kp BSLH   &kp GRAVE    &kp TILDE   &kp MINUS                      &kp LBKT        &kp RBKT        &kp PIPE    &kp SLASH
+                    &kp STAR    &kp LS(N3)  &kp DLLR                       &kp LS(COMMA)   &kp LS(DOT)     &kp MINUS
+        &kp BSLH   &kp GRAVE    &kp TILDE   &kp CARET                      &kp LBKT        &kp RBKT        &kp PIPE    &kp SLASH
                                 &trans      &trans                         &trans      &trans
         >;
         };
         sym2 {
         bindings = <
-                    &kp ATSN    &kp QMARK        &kp LA(N3)                &kp LPRN    &kp RPRN    &kp DQT
+                    &kp ATSN    &kp QMARK        &kp LA(N3)                &kp LPRN    &kp RPRN    &kp MINUS
         &kp SEMI    &kp PRCNT   &kp EXCL         &kp LS(MINUS)             &kp LBRC    &kp RBRC    &kp AMPS    &kp COLON
                                 &trans          &trans                     &trans      &trans
 
@@ -197,7 +197,7 @@
         bt {
         bindings = <
                   &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2           &bt BT_SEL 3     &bt BT_SEL 4   &trans
-        &trans    &reset          &trans        &trans                 &trans           &trans         &reset  &bt BT_CLR
+        &trans    &reset          &trans        &bootloader            &bootloader      &trans         &reset  &bt BT_CLR
                                   &to AL1       &none                  &none     &none
         >;
         };
