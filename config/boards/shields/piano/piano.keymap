@@ -128,6 +128,15 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+    shrep: shift_repeat {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SHIFT_REPEAT";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <400>;
+            quick-tap-ms = <200>;
+            bindings = <&kp>, <&repeat>;
+        };
     alpha2macro: behavior_macro_1 {
         compatible = "zmk,behavior-macro";
         label = "MACRO1";
@@ -151,14 +160,14 @@
         bindings = <
                             &hm_l LCTL L    &hm_l LALT G    &hm_l LGUI D                &hm_r RGUI H    &hm_r LALT U        &hm_r RCTL O
             &hl_l NUM I     &hl_l SM2 S     &hl_l SM1 R     &hl_l SYS T                 &hl_r SYS N     &hl_r SM1 E         &hl_r SM2 A     &hl_r NUM C
-                                &mt LC(LS(LALT)) SPC        &sk LSHIFT                  &caps_alpha2macro     &alpha2macro
+                                &mt LC(LS(LALT)) SPC        &shrep LSHIFT 0             &caps_alpha2macro     &alpha2macro
         >;
         };
                 alpha2 {
         bindings = <
                     &kp V       &kp W       &kp M           &kp F       &kp SQT             &kp Z
         &kp Q       &kp J       &kp P       &kp K           &kp B       &kp DOT             &kp X       &kp Y
-                                &sk LSHIFT  &none           &none       &sl AL2U
+                                &trans      &none           &none       &sl AL2U
         >;
         };
 
