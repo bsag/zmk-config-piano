@@ -43,6 +43,11 @@
         key-positions = <10 11 12>;
             bindings = <&caps_word>;
         };
+        combo_num {
+            timeout-ms = <30>;
+            key-positions = <0 1 2>;
+            bindings = <&to NM1>;
+        };
         combo_bt  {
             timeout-ms = <10>;
             key-positions = <11 12>;
