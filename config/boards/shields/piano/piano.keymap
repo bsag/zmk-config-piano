@@ -188,8 +188,8 @@
 
         sys {
         bindings = <
-                            &kp ESC        &kp LG(LS(LBKT))    &kp LG(LS(RBKT))         &td LG(V) LG(C)     &kp UP          &kp BKSP
-        &td LG(GRAVE) TAB   &kp DEL        &td HOME LG(LBKT)   &td END LG(RBKT)         &td LG(S) LEFT      &kp DOWN        &kp RIGHT   &kp RET
+                            &kp ESC        &kp LG(LS(LBKT))    &kp LG(LS(RBKT))         &td LG(V) LG(C)     &td PG_UP UP    &kp BKSP
+        &td LG(GRAVE) TAB   &kp DEL        &td HOME LG(LBKT)   &td END LG(RBKT)         &td LG(S) LEFT      &td PG_DN DOWN  &kp RIGHT   &kp RET
                                            &sr LSHIFT AL1      &kp LALT                 &kp LSHIFT          &kp RGUI
         >;
         };
