@@ -7,6 +7,6 @@ I have largely stuck with the original layout of the alpha keys (as this is geni
 
 This is the layout I have settled on after a few weeks of use.
 
-![My piano layout](piano_layout.pdf)
+![My piano layout](piano_layout.png)
 
 
